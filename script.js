@@ -43,7 +43,6 @@ $(function() {
             });
         }
     }).draggable({
-        containment: "body",
         handle: ".window-header",
         stack: ".item",
         grid: [grid, grid],
@@ -55,7 +54,6 @@ $(function() {
             $(this).css("z-index", zIndexCounter);
         }
     }).resizable({
-        containment: "body",
         minHeight: 200,
         minWidth: 300,
         grid: grid,
