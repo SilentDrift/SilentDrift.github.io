@@ -1,0 +1,188 @@
+body, header {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+header h1 {
+    font-size: 1.5em;
+    margin: 0;
+    position: relative;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header .globe {
+    display: inline-block;
+}
+
+header p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    padding: 3px 8px;
+    background-color: #f8f9fa;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header nav ul li a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    justify-content: flex-start;
+}
+
+.item {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    position: relative;
+    cursor: move;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding: 0;
+    width: 50%;
+    min-height: 200px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.window-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 5px 10px;
+    border-bottom: 2px solid #ddd;
+    color: #333;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.window-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.minimize-btn, .maximize-btn, .close-btn {
+    cursor: pointer;
+    color: #333;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.close-btn {
+    color: #ff5c5c;
+}
+
+.window-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.image-container {
+    flex: 1;
+    margin: 10px;
+}
+
+.image-container img {
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    object-fit: cover;
+}
+
+.text-container {
+    flex: 2;
+    margin: 10px;
+}
+
+.text-container pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0;
+}
+
+ol {
+    padding-left: 20px;
+}
+
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background-color: #f8f9fa;
+    border-top: 2px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 10px;
+}
+
+.taskbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.taskbar-item {
+    padding: 5px 10px;
+    background-color: #e0e0e0;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.taskbar-item:hover {
+    background-color: #d0d0d0;
+}

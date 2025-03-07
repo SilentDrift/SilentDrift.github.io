@@ -1,0 +1,205 @@
+body, header {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 10px;  /* Reduced padding */
+    border-bottom: 2px solid #ddd;
+}
+
+header h1 {
+    font-size: 1.5em;  /* Smaller font size */
+    margin: 0;
+    position: relative;
+}
+
+header .globe {
+    display: inline-block;
+}
+
+header p {
+    margin: 5px 0;
+    font-size: 0.9em;  /* Smaller font size */
+}
+
+.main-nav {
+    width: 100%;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    padding: 3px 8px;  
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block;
+}
+
+.nav-links li a:hover {
+    color: #007bff;
+}
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;  /* Reduced gap */
+    padding: 20px;
+    justify-content: flex-start;
+}
+
+.item {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    position: relative;
+    cursor: move;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding: 0;
+    width: calc(50% - 15px); /* Adjusted to account for gap */
+    min-height: 200px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.item pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 10px;
+    padding-bottom: 10px; /* Extra margin at the bottom */
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.window-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 5px 10px;
+    border-bottom: 2px solid #ddd;
+    color: #333;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+}
+
+.close-btn {
+    cursor: pointer;
+    color: #ff5c5c;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+ol {
+    padding-left: 20px;
+}
+
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* Responsive design for mobile and small browser windows */
+@media screen and (max-width: 768px) {
+    .nav-links li {
+        margin: 0 5px;
+    }
+    
+    .grid-container {
+        padding: 10px;
+    }
+    
+    .item {
+        width: calc(100% - 10px); /* Full width minus gap */
+        margin-bottom: 15px;
+    }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.2em;
+    }
+    
+    header p {
+        font-size: 0.8em;
+    }
+    
+    .nav-links {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .nav-links li {
+        margin: 5px;
+    }
+    
+    .nav-links li a {
+        padding: 5px;
+        font-size: 0.9em;
+    }
+    
+    .grid-container {
+        padding: 5px;
+        gap: 5px;
+    }
+    
+    .item {
+        width: 100%; /* Full width */
+        min-height: 180px;
+        margin-bottom: 10px;
+    }
+    
+    .window-header {
+        padding: 3px 8px;
+    }
+    
+    .window-header .title {
+        font-size: 0.9em;
+    }
+}
+
+/* Resizable styles */
+.ui-resizable { position: relative; }
+.ui-resizable-handle { position: absolute; font-size: 0.1px; display: block; }
+.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle { display: none; }
+.ui-resizable-n { cursor: n-resize; height: 7px; width: 100%; top: -5px; left: 0; }
+.ui-resizable-s { cursor: s-resize; height: 7px; width: 100%; bottom: -5px; left: 0; }
+.ui-resizable-e { cursor: e-resize; width: 7px; right: -5px; top: 0; height: 100%; }
+.ui-resizable-w { cursor: w-resize; width: 7px; left: -5px; top: 0; height: 100%; }
+.ui-resizable-se { cursor: se-resize; width: 12px; height: 12px; right: 1px; bottom: 1px; }
+.ui-resizable-sw { cursor: sw-resize; width: 9px; height: 9px; left: -5px; bottom: -5px; }
+.ui-resizable-nw { cursor: nw-resize; width: 9px; height: 9px; left: -5px; top: -5px; }
+.ui-resizable-ne { cursor: ne-resize; width: 9px; height: 9px; right: -5px; top: -5px; }
+
+/* Highlight for active resize - removed blue glow */
+.resizing {
+    /* No special styles for resizing */
+}
