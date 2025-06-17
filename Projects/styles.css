@@ -72,7 +72,7 @@ header nav ul li a:hover {
     border: 2px solid #ddd;
     position: relative;
     cursor: move;
-    overflow: hidden;
+    overflow: visible;
     transition: all 0.3s ease;
     padding: 0;
     width: 50%;
@@ -80,6 +80,7 @@ header nav ul li a:hover {
     margin-bottom: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+    height: auto !important;
 }
 
 .window-header {
@@ -122,23 +123,30 @@ header nav ul li a:hover {
 .image-container {
     flex: 1;
     margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .image-container img {
-    width: calc(100% - 20px);
-    height: calc(100% - 20px);
-    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
 }
 
 .text-container {
     flex: 2;
     margin: 10px;
+    overflow-y: auto;
 }
 
 .text-container pre {
     white-space: pre-wrap;
     word-wrap: break-word;
     margin: 0;
+    max-width: 100%;
 }
 
 ol {
@@ -185,4 +193,64 @@ footer {
 
 .taskbar-item:hover {
     background-color: #d0d0d0;
+}
+
+/* Responsive design for mobile and small browser windows */
+@media screen and (max-width: 768px) {
+    .grid-container {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+
+    .item {
+        width: 100% !important; /* Full width on small screens, override inline styles */
+        flex: 0 0 100% !important; /* Ensure flex basis full row */
+        margin-bottom: 15px;
+    }
+
+    .window-content {
+        flex-direction: row; /* KEEP image and text side by side on tablets/narrow desktop */
+    }
+
+    /* Remove mobile-specific padding at this breakpoint */
+    .image-container {
+        margin: 10px; /* restore default margin */
+        padding: 0;
+    }
+
+    .text-container {
+        padding: 0; /* restore default */
+    }
+}
+
+/* Extra-small phones */
+@media screen and (max-width: 480px) {
+    .window-content {
+        flex-direction: column; /* Image on top, text below ONLY on extra-small devices */
+    }
+
+    .image-container {
+        width: 100%;
+        margin: 0;           /* Remove outer margin to avoid overflow */
+        padding: 0 15px;     /* Horizontal padding around the centered image */
+    }
+
+    .text-container {
+        width: 100%;
+        padding: 0 10px 10px; /* Horizontal padding to align with image */
+    }
+
+    .item {
+        min-height: 180px; /* Slightly smaller min-height for very small displays */
+    }
+}
+
+/* Single column layout triggered by JS when viewport < 2/3 screen */
+.grid-container.single-column .item {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+}
+
+/* Universal box-sizing for predictable padding/border sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
 }
