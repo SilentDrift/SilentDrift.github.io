@@ -72,6 +72,20 @@ $(function() {
             $(this).css("z-index", zIndexCounter);
         }
     });
+
+    // Function to toggle single-column layout when viewport width is < 2/3 of the physical screen width
+    function updateLayout() {
+        var ratio = $(window).width() / window.screen.width; // viewport width divided by screen width
+        if (ratio <= 0.6667) {
+            $(".grid-container").addClass("single-column");
+        } else {
+            $(".grid-container").removeClass("single-column");
+        }
+    }
+
+    // Initial call and event binding
+    updateLayout();
+    $(window).on("resize", updateLayout);
 });
 
 function closeSection(element) {
