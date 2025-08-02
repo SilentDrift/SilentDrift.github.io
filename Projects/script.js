@@ -26,7 +26,9 @@ $(function() {
     $(".grid-container .item").each(function() {
         var $this = $(this);
         var initialWidth = $(window).width() / 2 - 20;
-        var minWidth = calculateMinWidth($this);
+        var minWidth = $(window).width() / 4;
+        var maxWidth = $(window).width();
+        var maxHeight = $(window).height() / 2;
 
         if ($this.find('.image-container img').length) {
             var img = $this.find('.image-container img')[0];
@@ -48,8 +50,9 @@ $(function() {
         $this.resizable({
             containment: "body",
             minHeight: initialHeight, // Set min height to initial height
+            maxHeight: maxHeight,
             minWidth: minWidth,
-            maxWidth: initialWidth,
+            maxWidth: maxWidth,
             grid: grid,
             start: function(event, ui) {
                 zIndexCounter++;
