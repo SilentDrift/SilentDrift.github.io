@@ -6,6 +6,7 @@ body {
     color: #333;
     overflow-x: hidden; /* Prevent horizontal scrolling due to animations */
     position: relative; /* For positioning of animation elements */
+    zoom: 90%;
 }
 
 .container {
