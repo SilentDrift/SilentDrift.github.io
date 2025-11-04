@@ -257,32 +257,4 @@ footer {
 }
 
 /* Custom style for research paper card */
-.paper-card {
-    /* Subtle accent while still matching base card style */
-    background-color: #f9fbff; /* very light blue-tinted white */
-    border: 2px solid #b8c8e0; /* soft desaturated blue-grey */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.07); /* same depth as others */
-}
-
-.paper-card .window-header {
-    background-color: #e5eefb; /* pale header tint */
-    color: #333; /* keep text dark for consistency */
-    border-bottom: 2px solid #b8c8e0; /* tie header to card border */
-}
-
-/* Accent line on the left to gently highlight research importance */
-.paper-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 6px;
-    background-color: #7aa6ee; /* slightly stronger blue accent */
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-
-.paper-card .close-btn {
-    color: #7aa6ee; /* matches accent */
-}
+/* Removed custom .paper-card styling to make paper entries use the standard .item window style */
