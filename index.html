@@ -71,12 +71,24 @@ Personal Telegram channel: <a href="https://t.me/AGMMelange" target="_blank">Ash
     <li>Fantasy literature.</li>
 </ol></pre>
             </div>
-            <div class="item image-item">
+            <div class="item image-item" id="tehran-fmv-window">
                 <div class="window-header">
                     <span class="title">my_hometown_tehran.jpg</span>
                     <span class="close-btn" onclick="closeSection(this)">✖</span>
                 </div>
-                <img id="tehran-fmv-picture" src="Picow/TehranFMV/1.jpg" alt="A random Tehran FMV picture">
+                <img id="tehran-fmv-picture" width="1280" height="1280" alt="A random Tehran FMV picture">
+                <script>
+                    (function() {
+                        var pictures = [
+                            "Picow/TehranFMV/1.jpg",
+                            "Picow/TehranFMV/2.jpg",
+                            "Picow/TehranFMV/3.jpg",
+                            "Picow/TehranFMV/4.jpg"
+                        ];
+                        var picture = pictures[Math.floor(Math.random() * pictures.length)];
+                        document.getElementById("tehran-fmv-picture").src = picture;
+                    }());
+                </script>
             </div>
         </div>
     </main>

@@ -123,6 +123,12 @@ header p {
     display: block;
 }
 
+/* The Tehran pictures are all square, so reserve the final window size immediately. */
+#tehran-fmv-window {
+    width: 300px;
+    height: 300px;
+}
+
 .window-header {
     display: flex;
     justify-content: space-between;
@@ -169,6 +175,12 @@ body {
     .item {
         width: calc(100% - 10px); /* Full width minus gap */
         margin-bottom: 15px;
+    }
+
+    #tehran-fmv-window {
+        width: calc(100% - 40px);
+        height: auto;
+        aspect-ratio: 1 / 1;
     }
 }
 

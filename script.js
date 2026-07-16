@@ -4,15 +4,6 @@ $(function() {
     var grid = 20; // Grid size for snapping
     var zIndexCounter = 1000; // Initial z-index counter
 
-    var tehranPictures = [
-        "Picow/TehranFMV/1.jpg",
-        "Picow/TehranFMV/2.jpg",
-        "Picow/TehranFMV/3.jpg",
-        "Picow/TehranFMV/4.jpg"
-    ];
-    var randomTehranPicture = tehranPictures[Math.floor(Math.random() * tehranPictures.length)];
-    $("#tehran-fmv-picture").attr("src", randomTehranPicture);
-
     function resizeImageWindow($item) {
         var img = $item.find('img')[0];
         if (!img || !img.complete || !img.naturalWidth) {
@@ -23,10 +14,16 @@ $(function() {
         
         var aspectRatio = img.naturalWidth / img.naturalHeight;
         var widthBasedOnHeight = initialHeight * aspectRatio;
+        var imageHeight = initialHeight;
+
+        if ($(window).width() <= 768) {
+            widthBasedOnHeight = $(".grid-container").width() - 40;
+            imageHeight = widthBasedOnHeight / aspectRatio;
+        }
 
         $item.css({
             width: widthBasedOnHeight + 'px',
-            height: initialHeight + 'px'
+            height: imageHeight + 'px'
         });
         
         // Store aspect ratio for later use
